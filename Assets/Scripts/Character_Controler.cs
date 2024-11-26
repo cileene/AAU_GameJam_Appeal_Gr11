@@ -9,26 +9,19 @@ public class Character_Controler : MonoBehaviour
     private Vector3 mDirection;
     private bool jumpKey;
     private bool isGrounded;
-    private bool getAppeal;
-    public bool PickKey;
-
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
     }
 
-    public void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             jumpKey = true;
         }
 
-         if (Input.GetKeyDown(KeyCode.P) && getAppeal)
-        {
-            PickKey = true;
-        }
-
+    
     }
 
     void FixedUpdate()
@@ -52,10 +45,7 @@ public class Character_Controler : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("AppealYes"))
-        {
-            getAppeal = true;
-        }
+       
     }
 
     void OnCollisionExit(Collision collision)

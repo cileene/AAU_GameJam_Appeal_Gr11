@@ -8,6 +8,7 @@ TagManager:
   - AppealYes
   - yesStack
   - noStack
+  - AppealNo
   layers:
   - Default
   - TransparentFX

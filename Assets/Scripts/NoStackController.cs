@@ -6,11 +6,6 @@ public class NoStackController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (gameManager == null)
-        {
-            Debug.LogError("GameManager reference is null in OnTriggerEnter!");
-            return;
-        }
 
         if (other.gameObject.CompareTag("AppealYes"))
         {

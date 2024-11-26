@@ -9,12 +9,14 @@ public class YesStackController : MonoBehaviour
         if (other.gameObject.CompareTag("AppealYes"))
         {
             Debug.Log("Ja");
-            gameManager.IncrementScore();
+            gameManager.Score++;
+            Debug.Log("Current Score: " + gameManager.Score);
         }
         else if (other.gameObject.CompareTag("AppealNo"))
         {
             Debug.Log("Nej");
-            gameManager.IncrementAngryJudge();
+            gameManager.angryJudge++;
+            Debug.Log("Current Angry: " + gameManager.angryJudge);
         }
     }
 }

@@ -2,25 +2,27 @@ using UnityEngine;
 
 public class NoStackController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameManager gameManager;
+
     void OnTriggerEnter(Collider other)
     {
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager reference is null in OnTriggerEnter!");
+            return;
+        }
+
         if (other.gameObject.CompareTag("AppealYes"))
         {
             Debug.Log("Nej");
+            gameManager.angryJudge++;
+            Debug.Log("Current Angry: " + gameManager.angryJudge);
         }
-        if (other.gameObject.CompareTag("AppealNo"))
+        else if (other.gameObject.CompareTag("AppealNo"))
         {
             Debug.Log("Ja");
+            gameManager.Score++;
+            Debug.Log("Current Score: " + gameManager.Score);
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

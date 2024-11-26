@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int angryJudge = 0;
+    public int Score = 0;
+
+    public void IncrementAngryJudge()
     {
-        
+        angryJudge++;
+        Debug.Log("Current Angry: " + angryJudge);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncrementScore()
     {
-        
+        Score++;
+        Debug.Log("Current Score: " + Score);
     }
 }

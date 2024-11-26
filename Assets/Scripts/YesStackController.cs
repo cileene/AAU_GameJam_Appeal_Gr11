@@ -2,26 +2,19 @@ using UnityEngine;
 
 public class YesStackController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-      void OnTriggerEnter(Collider other)
+    public GameManager gameManager;
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AppealYes"))
         {
             Debug.Log("Ja");
+            gameManager.IncrementScore();
         }
-        if (other.gameObject.CompareTag("AppealNo"))
+        else if (other.gameObject.CompareTag("AppealNo"))
         {
             Debug.Log("Nej");
+            gameManager.IncrementAngryJudge();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

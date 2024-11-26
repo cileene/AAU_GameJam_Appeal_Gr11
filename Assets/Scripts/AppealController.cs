@@ -32,7 +32,7 @@ public class AppealController : MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("You have destroyed the object");
         }
-        
+ 
     }
 
     void OnTriggerExit(Collider other)

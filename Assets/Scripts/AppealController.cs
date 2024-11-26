@@ -13,8 +13,6 @@ public class AppealController : MonoBehaviour
            
             transform.parent = Player.transform; 
         }
-
-     
     }   
 
     void OnTriggerEnter(Collider other)
@@ -23,6 +21,18 @@ public class AppealController : MonoBehaviour
         {
             getAppeal = true;
         }
+
+        if (other.gameObject.CompareTag("yesStack"))
+        {
+            Destroy(this.gameObject);
+            Debug.Log("You have destroyed the object");
+        }
+        if (other.gameObject.CompareTag("noStack"))
+        {
+            Destroy(this.gameObject);
+            Debug.Log("You have destroyed the object");
+        }
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -32,4 +42,6 @@ public class AppealController : MonoBehaviour
             getAppeal = false;
         }
     }
+    
+
 }

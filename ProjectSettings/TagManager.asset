@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - AppealYes
+  - yesStack
+  - noStack
   layers:
   - Default
   - TransparentFX

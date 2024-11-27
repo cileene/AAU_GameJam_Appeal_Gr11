@@ -3,47 +3,84 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    public GameObject objectToSpawn; // The object to be spawned
-    public float spawnInterval = 10f; // Time interval between spawns
-    public BoxCollider spawnArea; // The area within which objects will be spawned
-    private GameObject currentSpawnedObject; // Reference to the currently spawned object
+    public GameObject objectToSpawn; // Objekter der skal spawnes
+    public BoxCollider spawnArea; // Området hvor objekterne skal spawnes
+    public float initialSpawnInterval = 10f; // Start spawn-interval
+    public float minSpawnInterval = 2f; // Minimum spawn-interval
+    public float intervalReductionRate = 0.1f; // Hvor meget intervallet reduceres over tid
+    public int initialMaxObjects = 4; // Start grænse for antal objekter
+    public int maxObjectsIncrementRate = 1; // Hvor meget max objekter øges over tid
+    public float maxObjectsIncreaseInterval = 60f; // Tid før max-objekter øges
+
+    private float currentSpawnInterval; // Aktuelt spawn-interval
+    private int currentMaxObjects; // Aktuel grænse for antal objekter
+    private int currentObjectCount; // Aktuelt antal spawnede objekter
 
     void Start()
     {
-        // Start the spawning coroutine
+        currentSpawnInterval = initialSpawnInterval;
+        currentMaxObjects = initialMaxObjects;
+        currentObjectCount = 0;
+
+        // Start coroutines
         StartCoroutine(SpawnObjectRoutine());
+        StartCoroutine(IncreaseMaxObjectsOverTime());
     }
 
     IEnumerator SpawnObjectRoutine()
     {
         while (true)
         {
-            // Wait for the specified interval
-            yield return new WaitForSeconds(spawnInterval);
+            // Vent på det nuværende spawn-interval
+            yield return new WaitForSeconds(currentSpawnInterval);
 
-            // Check if an object already exists
-            if (currentSpawnedObject == null)
+            // Reducer spawn-intervallet over tid (med en nedre grænse)
+            if (currentSpawnInterval > minSpawnInterval)
+                currentSpawnInterval -= intervalReductionRate;
+
+            // Spawn kun, hvis der er plads til flere objekter
+            if (currentObjectCount < currentMaxObjects)
             {
-                // Get a random position within the spawn area
+                // Få en tilfældig position inden for spawn-området
                 Vector3 spawnPosition = GetRandomPositionInBox(spawnArea);
 
-                // Instantiate the object and store a reference to it
-                currentSpawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+                // Spawn objektet og opdater tælleren
+                Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+                currentObjectCount++;
             }
+        }
+    }
+
+    IEnumerator IncreaseMaxObjectsOverTime()
+    {
+        while (true)
+        {
+            // Vent en bestemt tid før max-objekter øges
+            yield return new WaitForSeconds(maxObjectsIncreaseInterval);
+            currentMaxObjects += maxObjectsIncrementRate;
         }
     }
 
     Vector3 GetRandomPositionInBox(BoxCollider box)
     {
-        // Calculate the center and size of the box collider
-        Vector3 center = box.center + box.transform.position;
-        Vector3 size = box.size;
-
-        // Return a random position within the box collider
-        return new Vector3(
-            Random.Range(center.x - size.x / 2, center.x + size.x / 2),
-            Random.Range(center.y - size.y / 2, center.y + size.y / 2),
-            Random.Range(center.z - size.z / 2, center.z + size.z / 2)
+        // Generer en tilfældig position i box colliderens lokale koordinater
+        Vector3 localPosition = new Vector3(
+            Random.Range(-box.size.x / 2, box.size.x / 2),
+            Random.Range(-box.size.y / 2, box.size.y / 2),
+            Random.Range(-box.size.z / 2, box.size.z / 2)
         );
+
+        // Konverter lokal position til verdenskoordinater
+        return box.transform.TransformPoint(localPosition + box.center);
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Tegn en visuel repræsentation af spawn-området i editoren
+        if (spawnArea != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(spawnArea.transform.TransformPoint(spawnArea.center), spawnArea.size);
+        }
     }
 }

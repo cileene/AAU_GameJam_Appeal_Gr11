@@ -10,15 +10,15 @@ public class AppealController : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P) && getAppeal && !isCarryingObject)
         {
-            transform.parent = Player.transform; 
+            transform.position = Player.transform.position + new Vector3(0, 1, 0); 
+            transform.SetParent(Player.transform); // Set the Player as the parent
             isCarryingObject = true;
         }
-    }   
+    }
 
     void OnTriggerEnter(Collider other)
     {

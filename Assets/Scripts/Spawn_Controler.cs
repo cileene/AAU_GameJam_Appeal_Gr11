@@ -1,9 +1,11 @@
+
 using System.Collections;
 using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
     public GameObject objectToSpawn; // Objekter der skal spawnes
+    public GameObject objectToSpawn2; // Objekter der skal spawnes
     public BoxCollider spawnArea; // Området hvor objekterne skal spawnes
     public float initialSpawnInterval = 10f; // Start spawn-interval
     public float minSpawnInterval = 2f; // Minimum spawn-interval
@@ -36,26 +38,37 @@ public class SpawnController : MonoBehaviour
 
             // Reducer spawn-intervallet over tid (med en nedre grænse)
             if (currentSpawnInterval > minSpawnInterval)
+            {
                 currentSpawnInterval -= intervalReductionRate;
+            }
 
-            // Spawn kun, hvis der er plads til flere objekter
+            // Tjek om vi kan spawne flere objekter
             if (currentObjectCount < currentMaxObjects)
             {
-                // Få en tilfældig position inden for spawn-området
-                Vector3 spawnPosition = GetRandomPositionInBox(spawnArea);
-
-                // Spawn objektet og opdater tælleren
-                Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
-                currentObjectCount++;
+                SpawnObject(objectToSpawn);
+                SpawnObject(objectToSpawn2);
             }
         }
+    }
+
+    void SpawnObject(GameObject objectToSpawn)
+    {
+        // Generer en tilfældig position inden for spawn-området
+        Vector3 spawnPosition = new Vector3(
+            Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x),
+            Random.Range(spawnArea.bounds.min.y, spawnArea.bounds.max.y),
+            Random.Range(spawnArea.bounds.min.z, spawnArea.bounds.max.z)
+        );
+
+        // Spawn objektet
+        Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+        currentObjectCount++;
     }
 
     IEnumerator IncreaseMaxObjectsOverTime()
     {
         while (true)
         {
-            // Vent en bestemt tid før max-objekter øges
             yield return new WaitForSeconds(maxObjectsIncreaseInterval);
             currentMaxObjects += maxObjectsIncrementRate;
         }

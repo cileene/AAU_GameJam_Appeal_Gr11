@@ -20,7 +20,7 @@ public class AppealController : MonoBehaviour
         }
     }   
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -41,7 +41,7 @@ public class AppealController : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

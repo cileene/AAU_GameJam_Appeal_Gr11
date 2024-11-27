@@ -5,13 +5,14 @@ public class AppealController : MonoBehaviour
     public GameObject Player; // Reference to the Player object
     bool PickKey; // Declare the PickKey variable
     private bool getAppeal; // Declare the getAppeal variable
-
+    private static bool isCarryingObject;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && getAppeal)
+        if (Input.GetKeyDown(KeyCode.P) && getAppeal && !isCarryingObject)
         {
            
             transform.parent = Player.transform; 
+            isCarryingObject = true;
         }
     }   
 
@@ -26,11 +27,13 @@ public class AppealController : MonoBehaviour
         {
             Destroy(this.gameObject);
             Debug.Log("You have destroyed the object");
+            isCarryingObject = false;
         }
         if (other.gameObject.CompareTag("noStack"))
         {
             Destroy(this.gameObject);
             Debug.Log("You have destroyed the object");
+            isCarryingObject = false;
         }
  
     }

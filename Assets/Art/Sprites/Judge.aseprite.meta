@@ -1,0 +1,737 @@
+fileFormatVersion: 2
+guid: e784ad1b6c7574903ba2c2b9e6d287cc
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 64
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638683088398927710
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Torso
+    originalName: 
+    pivot: {x: 0.43478262, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 46
+      height: 32
+    spriteID: bce395cea1d5b4fa1a5afe2c094d614c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Head1
+    originalName: 
+    pivot: {x: 0.56, y: -1.0384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 99
+      y: 4
+      width: 25
+      height: 26
+    spriteID: 3d2e1292a3f7d4f4ba04d41fa398f977
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 99, y: 4}
+  - name: Head2
+    originalName: 
+    pivot: {x: 0.56, y: -1.0384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 25
+      height: 26
+    spriteID: a871e32af92054c148ac1fb9cb35dcf2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
+  - name: Head3
+    originalName: 
+    pivot: {x: 0.56, y: -1.0384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 37
+      y: 44
+      width: 25
+      height: 26
+    spriteID: 97a9efb0ba46f47a3a93aa442fe0bff3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 37, y: 44}
+  - name: Head4
+    originalName: 
+    pivot: {x: 0.56, y: -1.0384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 70
+      y: 44
+      width: 25
+      height: 26
+    spriteID: d73a6f481c59843f4b8beb9d37628feb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 70, y: 44}
+  - name: Eyes
+    originalName: 
+    pivot: {x: 0.5714286, y: -9.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 72
+      y: 78
+      width: 14
+      height: 4
+    spriteID: 35ae2103cc9c64815953fc0d0d54a4c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 72, y: 78}
+  - name: Mouth
+    originalName: 
+    pivot: {x: 0.5555556, y: -6}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 78
+      width: 9
+      height: 5
+    spriteID: e1b7bb12bee214fbcb4bb9bffaaec3a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 78}
+  - name: Eyebrows
+    originalName: 
+    pivot: {x: 0.5833334, y: -20.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 111
+      y: 78
+      width: 12
+      height: 2
+    spriteID: 387d51396549a414a9dfd191045d56c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 111, y: 78}
+  - name: Nose
+    originalName: 
+    pivot: {x: 0.6666667, y: -18}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 34
+      y: 99
+      width: 3
+      height: 2
+    spriteID: 4b721d6417ca44ba3a32318a6c3bbfa3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 34, y: 99}
+  - name: LeftArm
+    originalName: 
+    pivot: {x: 1.2272727, y: -0.28}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 78
+      width: 22
+      height: 25
+    spriteID: a6920b66de27b408ab11334aa8106b9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 78}
+  - name: RightArm
+    originalName: 
+    pivot: {x: -0.31578946, y: -0.8235294}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 103
+      y: 44
+      width: 19
+      height: 17
+    spriteID: a857fa2f0bfcf48bc99808a2228e6441
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 103, y: 44}
+  - name: LeftHand
+    originalName: 
+    pivot: {x: 2.909091, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 53
+      y: 78
+      width: 11
+      height: 9
+    spriteID: 0f7c0843dce374d10a8b3492147d4594
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 53, y: 78}
+  - name: RightHand
+    originalName: 
+    pivot: {x: -1.909091, y: -0.30769232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 34
+      y: 78
+      width: 11
+      height: 13
+    spriteID: ecca27d43e28a4cec9e7d65b2fa105f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 34, y: 78}
+  - name: Hair
+    originalName: 
+    pivot: {x: 0.5151515, y: -1.24}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 4
+      width: 33
+      height: 25
+    spriteID: 4dea92afd24af43d59cf69dfe0f4aecc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1481541419
+    name: Torso
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Torso
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 0
+        width: 46
+        height: 32
+      spriteId: bce395cea1d5b4fa1a5afe2c094d614c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -1430663844
+    name: Head1
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Head1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 27
+        width: 25
+        height: 26
+      spriteId: 3d2e1292a3f7d4f4ba04d41fa398f977
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -1430663448
+    name: Head2
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Head2
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 27
+        width: 25
+        height: 26
+      spriteId: a871e32af92054c148ac1fb9cb35dcf2
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: -1430663052
+    name: Head3
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Head3
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 27
+        width: 25
+        height: 26
+      spriteId: 97a9efb0ba46f47a3a93aa442fe0bff3
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: -1430665832
+    name: Head4
+    layerFlags: 2
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Head4
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 27
+        width: 25
+        height: 26
+      spriteId: d73a6f481c59843f4b8beb9d37628feb
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: -978837803
+    name: Eyes
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Eyes
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 38
+        width: 14
+        height: 4
+      spriteId: 35ae2103cc9c64815953fc0d0d54a4c0
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: 1927797257
+    name: Mouth
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Mouth
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 27
+        y: 30
+        width: 9
+        height: 5
+      spriteId: e1b7bb12bee214fbcb4bb9bffaaec3a5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: 1352853061
+    name: Eyebrows
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Eyebrows
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 25
+        y: 41
+        width: 12
+        height: 2
+      spriteId: 387d51396549a414a9dfd191045d56c0
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -1184995409
+    name: Nose
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Nose
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 36
+        width: 3
+        height: 2
+      spriteId: 4b721d6417ca44ba3a32318a6c3bbfa3
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: 1840097476
+    name: LeftArm
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: LeftArm
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 7
+        width: 22
+        height: 25
+      spriteId: a6920b66de27b408ab11334aa8106b9c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 10
+    guid: -1690684244
+    name: RightArm
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: RightArm
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 38
+        y: 14
+        width: 19
+        height: 17
+      spriteId: a857fa2f0bfcf48bc99808a2228e6441
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 11
+    guid: -569277011
+    name: LeftHand
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: LeftHand
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 11
+        height: 9
+      spriteId: 0f7c0843dce374d10a8b3492147d4594
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 12
+    guid: 2033605859
+    name: RightHand
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: RightHand
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 53
+        y: 4
+        width: 11
+        height: 13
+      spriteId: ecca27d43e28a4cec9e7d65b2fa105f8
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 13
+    guid: 626662023
+    name: Hair
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Hair
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 31
+        width: 33
+        height: 25
+      spriteId: 4dea92afd24af43d59cf69dfe0f4aecc
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: Default
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

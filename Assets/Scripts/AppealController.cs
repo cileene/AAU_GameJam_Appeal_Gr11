@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class AppealController : MonoBehaviour
 {
-    public GameObject Player; // Reference to the Player object
-    bool PickKey; // Declare the PickKey variable
+    private GameObject Player; // Reference to the Player object
     private bool getAppeal; // Declare the getAppeal variable
     private static bool isCarryingObject;
+
+    void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P) && getAppeal && !isCarryingObject)
         {
-           
             transform.parent = Player.transform; 
             isCarryingObject = true;
         }
@@ -29,13 +33,12 @@ public class AppealController : MonoBehaviour
             Debug.Log("You have destroyed the object");
             isCarryingObject = false;
         }
-        if (other.gameObject.CompareTag("noStack"))
+        else if (other.gameObject.CompareTag("noStack"))
         {
             Destroy(this.gameObject);
             Debug.Log("You have destroyed the object");
             isCarryingObject = false;
         }
- 
     }
 
     void OnTriggerExit(Collider other)
@@ -45,6 +48,4 @@ public class AppealController : MonoBehaviour
             getAppeal = false;
         }
     }
-    
-
 }

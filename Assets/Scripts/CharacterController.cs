@@ -5,54 +5,58 @@ public class CharacterController : MonoBehaviour
     public float moveSpeed = 1f;
     public float jumpForce = 5f;
     private Rigidbody _rb;
-    private float hInput;
-    private Vector3 mDirection;
-    private bool jumpKey;
-    private bool isGrounded;
-    void Start()
+    private float _hInput;
+    private Vector3 _mDirection;
+    private bool _jumpKey;
+    private bool _isGrounded;
+    private int _groundContacts = 0; // Fix for loosing ground detection
+    
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
-            jumpKey = true;
+            _jumpKey = true;
         }
-
-    
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (jumpKey)
+        if (_jumpKey)
         {
             _rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
-            jumpKey = false;
+            _jumpKey = false;
         }
 
-        hInput = Input.GetAxis("Horizontal");
-        mDirection = new Vector3(hInput, 0, 0) * moveSpeed;
-        _rb.AddForce(mDirection, ForceMode.VelocityChange);
-
-       
+        _hInput = Input.GetAxis("Horizontal");
+        _mDirection = new Vector3(_hInput, 0, 0) * moveSpeed;
+        _rb.AddForce(_mDirection, ForceMode.VelocityChange);
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
+            _groundContacts++;
+            _isGrounded = true;
+            Debug.Log("Grounded - Contacts: " + _groundContacts);
         }
-       
     }
 
-    void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = false;
+            _groundContacts--;
+            if (_groundContacts <= 0)
+            {
+                _isGrounded = false;
+                Debug.Log("Not Grounded - Contacts: " + _groundContacts);
+            }
         }
     }
 }

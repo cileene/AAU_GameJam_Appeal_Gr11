@@ -9,7 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     private float _timer;
 
-    void Update()
+    private void Update()
     {
         _timer -= Time.deltaTime; // Countdown the timer
         _spawnTime = GameManager.Score switch
@@ -34,7 +34,7 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnObstacle() //TODO: We need to understand this
+    private void SpawnObstacle() //TODO: Focus here
     {
         // Random X position near spawn point
         float randomX = Random.Range(-spawnRangeX, spawnRangeX);

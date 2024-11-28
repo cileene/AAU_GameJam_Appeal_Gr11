@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class YesStackController : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AppealYes"))
         {
-            Debug.Log("Korrekt");
+            Debug.Log("Correct");
             GameManager.Score++;
             Debug.Log("Current Score: " + GameManager.Score);
         }
         else if (other.gameObject.CompareTag("AppealNo"))
         {
-            Debug.Log("Forkert");
-            GameManager.angryJudge++;
-            Debug.Log("Current Angry: " + GameManager.angryJudge);
+            Debug.Log("Wrong");
+            GameManager.AngryJudge++;
+            Debug.Log("Current Angry: " + GameManager.AngryJudge);
         }
     }
 }

@@ -10,8 +10,17 @@ public class GameManager : MonoBehaviour
     {
         if (angryJudge >= 3)
         {
-            SceneManager.LoadScene("GameOver");
+            GameOver();
         }
     }
-
+    public static void GameOver() //TODO: implement game over
+    {
+        SceneManager.LoadScene("GameOver");
+        Debug.Log("Game Over");
+    }
+      public static void GameStart()
+    {
+        SceneManager.LoadScene("GameStart"); //TODO: implement game start
+        Debug.Log("Game Start");
+    }
 }

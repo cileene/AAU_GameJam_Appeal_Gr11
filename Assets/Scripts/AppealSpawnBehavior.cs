@@ -14,7 +14,7 @@ public class AppealSpawnBehavior : MonoBehaviour
 
     private float _timer;
 
-    void Start()
+    private void Start()
     {
         // Initialize text pools
         _appealTexts = new string[][]
@@ -38,7 +38,7 @@ public class AppealSpawnBehavior : MonoBehaviour
         };
     }
 
-    void Update()
+    private void Update()
     {
         _timer -= Time.deltaTime;
 

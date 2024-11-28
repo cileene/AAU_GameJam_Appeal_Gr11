@@ -13,17 +13,12 @@ public class GameManager : MonoBehaviour
     public GameObject StartAngryFace;
     public GameObject MidAngryFace;
     public GameObject EndAngryFace;
+    public GameObject EndCam;
+    public GameObject Player;
 
 
     void Update()
     {
-        if (angryJudge == 3)
-        {
-            GameOverScreen.SetActive(true);
-            scoreText.text = $"Your score was: {Score}";
-            AppealText.SetActive(false);
-            Time.timeScale = 0;
-        }
         if (angryJudge == 0)
         {
             NormalFace.SetActive(true);
@@ -40,8 +35,15 @@ public class GameManager : MonoBehaviour
         }
         if (angryJudge == 3)
         {
+            Player.GetComponent<Rigidbody>().isKinematic = true; //expensive
+            
+            EndCam.SetActive(true);
             EndAngryFace.SetActive(true);
             MidAngryFace.SetActive(false);
+            GameOverScreen.SetActive(true);
+            scoreText.text = $"Your score was: {Score}";
+            AppealText.SetActive(false);
+            //Time.timeScale = 0;
         }
     }
     public static void GameOver() //TODO: implement game over
@@ -54,10 +56,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameStart"); //TODO: implement game start
         Debug.Log("Game Start");
     }
-    public void restartGame()
+    public void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("codeTestScene");
+        SceneManager.LoadScene("CourtroomScene");
         GameOverScreen.SetActive(false);
         AppealText.SetActive(true);
         angryJudge = 0;

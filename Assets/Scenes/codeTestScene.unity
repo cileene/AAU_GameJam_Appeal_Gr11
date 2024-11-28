@@ -1168,8 +1168,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.061303, y: 1, z: 0.55075544}
-  m_Center: {x: 0.030651819, y: 0, z: 0.22462206}
+  m_Size: {x: 1.061303, y: 1, z: 0.5765243}
+  m_Center: {x: 0.03065181, y: 0, z: 0.21173763}
 --- !u!23 &1915877330
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1254,9 +1254,9 @@ MonoBehaviour:
   objectToSpawn2: {fileID: 1729611678}
   spawnArea: {fileID: 1915877329}
   initialSpawnInterval: 10
-  minSpawnInterval: 2
-  intervalReductionRate: 0.1
-  initialMaxObjects: 10
+  minSpawnInterval: 1
+  intervalReductionRate: 0.2
+  initialMaxObjects: 100000
   maxObjectsIncrementRate: 1
   maxObjectsIncreaseInterval: 60
 --- !u!1 &1999314805 stripped
@@ -1365,6 +1365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppealNoPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4571359413367102276, guid: 2942bbfff92fa40ad951d9eabb17a02a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7162809477016299031, guid: 2942bbfff92fa40ad951d9eabb17a02a, type: 3}
       propertyPath: m_Constraints
       value: 120
@@ -1394,7 +1398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6339405342596631560, guid: f9f29d05be9d24c80ae0d6bf382f30ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.377
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 6339405342596631560, guid: f9f29d05be9d24c80ae0d6bf382f30ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1435,6 +1439,10 @@ PrefabInstance:
     - target: {fileID: 6989285482702827874, guid: f9f29d05be9d24c80ae0d6bf382f30ff, type: 3}
       propertyPath: m_Name
       value: AppealYesPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989285482702827874, guid: f9f29d05be9d24c80ae0d6bf382f30ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

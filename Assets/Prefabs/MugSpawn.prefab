@@ -4979,7 +4979,7 @@ GameObject:
   - component: {fileID: 1442929844352916876}
   m_Layer: 0
   m_Name: MugSpawn
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4993,9 +4993,9 @@ Transform:
   m_GameObject: {fileID: 7914596625475845699}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071073, y: 0.7071063, z: -0.0000017881391, w: 0.0000017136333}
-  m_LocalPosition: {x: 0.86063445, y: 5.5629997, z: 0.9996055}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5624983419456052965}
   - {fileID: 1995558897051701338}

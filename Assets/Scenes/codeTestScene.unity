@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6dfc4695be03457491fea2d4ba9b7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
+  appealPrefabs:
   - {fileID: 4571359413367102276, guid: 2942bbfff92fa40ad951d9eabb17a02a, type: 3}
   - {fileID: 6989285482702827874, guid: f9f29d05be9d24c80ae0d6bf382f30ff, type: 3}
   spawnPoint: {fileID: 631021590}

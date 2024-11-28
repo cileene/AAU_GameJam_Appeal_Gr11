@@ -2,55 +2,39 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public GameObject[] obstaclePrefabs; // Obstacles to spawn
-    public Transform spawnPoint; // Where obstacles spawn
+    public GameObject[] obstaclePrefabs; 
+    public Transform spawnPoint; 
     public float spawnRangeX = 3f; // How far left/right to spawn
-    private float spawnTime; // Time between spawns
+    private float _spawnTime; // Time between spawns
 
-    private float timer;
+    private float _timer;
 
     void Update()
     {
-        timer -= Time.deltaTime; // Countdown the timer
-        if (GameManager.Score == 0){
-            spawnTime = 10f;
-        }
-        else if (GameManager.Score == 1){
-            spawnTime = 9f;
-        }
-        else if (GameManager.Score == 2){
-            spawnTime = 8f;
-        }
-        else if (GameManager.Score == 3){
-            spawnTime = 7f;
-        }
-        else if (GameManager.Score == 4){
-            spawnTime = 6f;
-        }
-        else if (GameManager.Score == 5){
-            spawnTime = 5f;
-        }
-        else if (GameManager.Score == 6){
-            spawnTime = 4f;
-        }
-        else if (GameManager.Score == 7){
-            spawnTime = 3f;
-        }
-        else if (GameManager.Score == 8){
-            spawnTime = 2f;
-        }
-        else if (GameManager.Score == 9){
-            spawnTime = 1f;
-        }
+        _timer -= Time.deltaTime; // Countdown the timer
+        _spawnTime = GameManager.Score switch
+        {
+            0 => 10f,
+            1 => 9f,
+            2 => 8f,
+            3 => 7f,
+            4 => 6f,
+            5 => 5f,
+            6 => 4f,
+            7 => 3f,
+            8 => 2f,
+            9 => 1f,
+            _ => _spawnTime
+        };
 
-        if (timer <= 0f)
+        if (_timer <= 0f)
         {
             SpawnObstacle(); // Spawn a new obstacle
-            timer = spawnTime; // Reset the timer
+            _timer = _spawnTime; // Reset the timer
         }
     }
 
-    void SpawnObstacle()
+    private void SpawnObstacle() //TODO: We need to understand this
     {
         // Random X position near spawn point
         float randomX = Random.Range(-spawnRangeX, spawnRangeX);

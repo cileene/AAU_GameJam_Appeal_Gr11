@@ -4,65 +4,67 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static int angryJudge = 0;
+    public static int AngryJudge = 0;
     public static int Score = 0;
-    public GameObject GameOverScreen;
-    public GameObject AppealText;
+    public GameObject gameOverScreen;
+    public GameObject appealText;
     public TextMeshProUGUI scoreText;
-    public GameObject NormalFace;
-    public GameObject StartAngryFace;
-    public GameObject MidAngryFace;
-    public GameObject EndAngryFace;
-    public GameObject EndCam;
-    public GameObject Player;
+    public GameObject normalFace;
+    public GameObject startAngryFace;
+    public GameObject midAngryFace;
+    public GameObject endAngryFace;
+    public GameObject endCam;
+    public GameObject player;
 
-
-    void Update()
+    private void Update()
     {
-        if (angryJudge == 0)
+        if (AngryJudge == 0)
         {
-            NormalFace.SetActive(true);
+            normalFace.SetActive(true);
         }
-        if (angryJudge == 1)
+        if (AngryJudge == 1)
         {
-            StartAngryFace.SetActive(true);
-            NormalFace.SetActive(false);
+            startAngryFace.SetActive(true);
+            normalFace.SetActive(false);
         }
-        if (angryJudge == 2)
+        if (AngryJudge == 2)
         {
-            MidAngryFace.SetActive(true);
-            StartAngryFace.SetActive(false);
+            midAngryFace.SetActive(true);
+            startAngryFace.SetActive(false);
         }
-        if (angryJudge == 3)
+        if (AngryJudge == 3)
         {
-            Player.GetComponent<Rigidbody>().isKinematic = true; //expensive
+            player.GetComponent<Rigidbody>().isKinematic = true; //expensive
             
-            EndCam.SetActive(true);
-            EndAngryFace.SetActive(true);
-            MidAngryFace.SetActive(false);
-            GameOverScreen.SetActive(true);
+            endCam.SetActive(true);
+            endAngryFace.SetActive(true);
+            midAngryFace.SetActive(false);
+            gameOverScreen.SetActive(true);
             scoreText.text = $"Your score was: {Score}";
-            AppealText.SetActive(false);
+            appealText.SetActive(false);
             //Time.timeScale = 0;
         }
     }
+    
     public static void GameOver() //TODO: implement game over
     {
         SceneManager.LoadScene("GameOver");
         Debug.Log("Game Over");
     }
+    
       public static void GameStart()
     {
         SceneManager.LoadScene("GameStart"); //TODO: implement game start
         Debug.Log("Game Start");
     }
+      
     public void RestartGame()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("CourtroomScene");
-        GameOverScreen.SetActive(false);
-        AppealText.SetActive(true);
-        angryJudge = 0;
+        gameOverScreen.SetActive(false);
+        appealText.SetActive(true);
+        AngryJudge = 0;
         Score = 0;
     }
 

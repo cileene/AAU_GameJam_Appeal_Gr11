@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // For UI elements
 using TMPro;
-using UnityEngine.Serialization;
 
 public class AppealSpawnBehavior : MonoBehaviour
 {
@@ -108,8 +106,8 @@ public class AppealSpawnBehavior : MonoBehaviour
             5 => 6f,
             6 => 5f,
             7 => 4f,
-            8 => 3f,
-            9 => 2f,
+           // 8 => 3f,
+           // 9 => 2f,
             _ => spawnTime
         };
 
@@ -120,7 +118,7 @@ public class AppealSpawnBehavior : MonoBehaviour
         }
     }
 
-    private void SpawnPrefabWithText() //TODO: We need to understand this
+    private void SpawnPrefabWithText() //TODO: Focus here
     {
         // Randomize X position for spawning
         float randomX = Random.Range(-spawnRangeX, spawnRangeX);

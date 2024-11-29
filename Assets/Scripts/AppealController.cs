@@ -2,29 +2,30 @@ using UnityEngine;
 
 public class AppealController : MonoBehaviour
 {
-    private GameObject Player; // Reference to the Player object
-    private bool getAppeal; // Declare the getAppeal variable
+    private GameObject _player; // Reference to the Player object
+    private bool _getAppeal; // Declare the getAppeal variable
     private static bool isCarryingObject;
 
-    void Start()
+    private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
-    void Update()
+
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && getAppeal && !isCarryingObject)
+        if (Input.GetKeyDown(KeyCode.P) && _getAppeal && !isCarryingObject)
         {
-            transform.position = Player.transform.position + new Vector3(0, 1, 0); 
-            transform.SetParent(Player.transform); // Set the Player as the parent
+            transform.position = _player.transform.position + new Vector3(0, 1, 0); 
+            transform.SetParent(_player.transform); // Set the Player as the parent
             isCarryingObject = true;
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            getAppeal = true;
+            _getAppeal = true;
         }
 
         if (other.gameObject.CompareTag("yesStack"))
@@ -41,11 +42,11 @@ public class AppealController : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            getAppeal = false;
+            _getAppeal = false;
         }
     }
 }

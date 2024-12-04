@@ -82,7 +82,7 @@ ScriptedImporter:
     generateModelPrefab: 1
     generateAnimationClips: 1
     addSortingGroup: 1
-    addShadowCasters: 1
+    addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 1
@@ -95,9 +95,9 @@ ScriptedImporter:
     generateModelPrefab: 1
     generateAnimationClips: 1
     addSortingGroup: 1
-    addShadowCasters: 1
+    addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638683421382908820
+  platformSettingsDirtyTick: 638683979251365460
   textureAssetName: 
   singleSpriteImportData:
   - name: 

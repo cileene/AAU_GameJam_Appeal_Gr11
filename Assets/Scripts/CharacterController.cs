@@ -16,9 +16,10 @@ public class CharacterController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void Update() // Access modifier, Return type, Method name and Parameter list
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded) // Method body
+       
         {
             _jumpKey = true;
         }

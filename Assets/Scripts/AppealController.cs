@@ -15,7 +15,7 @@ public class AppealController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P) && _getAppeal && !isCarryingObject)
         {
-            transform.position = _player.transform.position + new Vector3(0, 1, 0); 
+            transform.position = _player.transform.position + new Vector3(0, 1, 0);  
             transform.SetParent(_player.transform); // Set the Player as the parent
             isCarryingObject = true;
         }

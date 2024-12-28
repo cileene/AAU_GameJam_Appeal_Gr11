@@ -34,7 +34,7 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnObstacle() //TODO: Focus here
+    private void SpawnObstacle() 
     {
         // Random X position near spawn point
         float randomX = Random.Range(-spawnRangeX, spawnRangeX);

@@ -3,8 +3,8 @@ using TMPro;
 
 public class AppealSpawnBehavior : MonoBehaviour
 {
-    public GameObject[] appealPrefabs; // Two obstacle prefabs
-    private string[][] _appealTexts; 
+    public GameObject[] appealPrefabs; // Array of prefabs to spawn
+    private string[][] _appealTexts; // Array of text pools for each prefab
     public Transform spawnPoint; 
     public TextMeshProUGUI displayText; // TextMeshPro element for displaying messages
     public float spawnTime; // Time between spawns

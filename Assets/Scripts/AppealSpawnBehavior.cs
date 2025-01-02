@@ -15,7 +15,7 @@ public class AppealSpawnBehavior : MonoBehaviour
     private void Start()
     {
         // Initialize text pools
-        _appealTexts = new string[][]
+        _appealTexts = new string[][] // This is a jagged array
         {
             new string[]
             {
@@ -96,20 +96,22 @@ public class AppealSpawnBehavior : MonoBehaviour
     {
         _timer -= Time.deltaTime;
 
-        spawnTime = GameManager.Score switch
-        {
-            0 => 15f,
-            1 => 13f,
-            2 => 11f,
-            3 => 10f,
-            4 => 7f,
-            5 => 6f,
-            6 => 5f,
-            7 => 4f,
-           // 8 => 3f,
-           // 9 => 2f,
-            _ => spawnTime
-        };
+        if (GameManager.Score == 0)
+            spawnTime = 15f;
+        else if (GameManager.Score == 1)
+            spawnTime = 13f;
+        else if (GameManager.Score == 2)
+            spawnTime = 11f;
+        else if (GameManager.Score == 3)
+            spawnTime = 10f;
+        else if (GameManager.Score == 4)
+            spawnTime = 7f;
+        else if (GameManager.Score == 5)
+            spawnTime = 6f;
+        else if (GameManager.Score == 6)
+            spawnTime = 5f;
+        else if (GameManager.Score == 7)
+            spawnTime = 4f;
 
         if (_timer <= 0f)
         {
@@ -137,8 +139,3 @@ public class AppealSpawnBehavior : MonoBehaviour
         displayText.text = selectedText;
     }
 }
-
-
-
-
-

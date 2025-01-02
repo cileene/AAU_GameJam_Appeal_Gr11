@@ -45,18 +45,6 @@ public class GameManager : MonoBehaviour
             //Time.timeScale = 0;
         }
     }
-    
-    public static void GameOver() //TODO: implement game over
-    {
-        SceneManager.LoadScene("GameOver");
-        Debug.Log("Game Over");
-    }
-    
-      public static void GameStart()
-    {
-        SceneManager.LoadScene("GameStart"); //TODO: implement game start
-        Debug.Log("Game Start");
-    }
       
     public void RestartGame()
     {
@@ -67,7 +55,4 @@ public class GameManager : MonoBehaviour
         AngryJudge = 0;
         Score = 0;
     }
-
-
-
 }

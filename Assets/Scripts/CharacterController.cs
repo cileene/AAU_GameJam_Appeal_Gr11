@@ -16,6 +16,7 @@ public class CharacterController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
+    // this method is called every frame, used to check for input on the jump key
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
@@ -24,6 +25,7 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    // this method is called every fixed frame rate frame, used to apply movement and physics of the police officer
     private void FixedUpdate()
     {
         if (_jumpKey)
@@ -37,6 +39,7 @@ public class CharacterController : MonoBehaviour
         _rb.AddForce(_mDirection, ForceMode.VelocityChange);
     }
 
+    // this method is called when the police officer collides with ground to make sure the police officer is grounded, can only jump when grounded
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))

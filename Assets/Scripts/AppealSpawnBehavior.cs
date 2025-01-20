@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class AppealSpawnBehavior : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class AppealSpawnBehavior : MonoBehaviour
     public TextMeshProUGUI displayText; // TextMeshPro element for displaying messages
     public float spawnTime; // Time between spawns
     public float spawnRangeX = 0.5f; // Range for random X positions
+    private float _timerFinished = 0f; // Time to spawn again
 
+    
+    private List<float> _appealSpawnTimes; // List of spawn times
     private float _timer;
 
     private void Start()
@@ -90,9 +94,52 @@ public class AppealSpawnBehavior : MonoBehaviour
                 "APPEAL GRANTED: The Flying Saucer Agreement"
             } // Text for prefab 2
         };
+
+        _appealSpawnTimes = new List<float> {15f, 13f, 11f, 10f, 7f, 6f, 5f, 4f};
+        
     }
 
     private void Update()
+    {
+        _timer -= Time.deltaTime;
+
+        if(GameManager.Score >= 0 && GameManager.Score < _appealSpawnTimes.Count)
+        {
+            float spawnTime = _appealSpawnTimes[GameManager.Score];
+        }
+        else
+        {
+            float spawnTime = _appealSpawnTimes[_appealSpawnTimes.Count - 1];
+        }
+
+        if(_timer <= _timerFinished)
+        {
+            SpawnPrefabWithText();
+            _timer = spawnTime;
+        }
+    }
+
+     private void SpawnPrefabWithText() // Method to spawn a prefab with a random text at a random position
+    {
+        // Randomize X position for spawning
+        float randomX = Random.Range(-spawnRangeX, spawnRangeX);
+        Vector3 position = new Vector3(randomX, spawnPoint.position.y, spawnPoint.position.z);
+
+        // Select a random prefab and corresponding text pool
+        int prefabIndex = Random.Range(0, appealPrefabs.Length);
+        GameObject selectedPrefab = appealPrefabs[prefabIndex];
+
+        // Randomly pick a text from the selected prefab's text pool
+        string[] textPool = _appealTexts[prefabIndex];
+        string selectedText = textPool[Random.Range(0, textPool.Length)];
+
+        // Spawn the prefab and display the text
+        Instantiate(selectedPrefab, position, spawnPoint.rotation);
+        displayText.text = selectedText;
+    }
+}
+
+   /* private void Update()
     {
         _timer -= Time.deltaTime;
 
@@ -118,24 +165,6 @@ public class AppealSpawnBehavior : MonoBehaviour
             SpawnPrefabWithText();
             _timer = spawnTime;
         }
-    }
+    }*/
 
-    private void SpawnPrefabWithText() //TODO: Focus here
-    {
-        // Randomize X position for spawning
-        float randomX = Random.Range(-spawnRangeX, spawnRangeX);
-        Vector3 position = new Vector3(randomX, spawnPoint.position.y, spawnPoint.position.z);
-
-        // Select a random prefab and corresponding text pool
-        int prefabIndex = Random.Range(0, appealPrefabs.Length);
-        GameObject selectedPrefab = appealPrefabs[prefabIndex];
-
-        // Randomly pick a text from the selected prefab's text pool
-        string[] textPool = _appealTexts[prefabIndex];
-        string selectedText = textPool[Random.Range(0, textPool.Length)];
-
-        // Spawn the prefab and display the text
-        Instantiate(selectedPrefab, position, spawnPoint.rotation);
-        displayText.text = selectedText;
-    }
-}
+   

@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class AppealController : MonoBehaviour
 {
+    public enum AppealType
+    {
+        AppealYes,
+        AppealNo
+    }
+
+    public AppealType appealType; // for reference to scoring system
+
     private GameObject _player; // Reference to the Player object
     private bool _getAppeal; // Declare the getAppeal variable
     private static bool isCarryingObject;
@@ -13,9 +21,9 @@ public class AppealController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && _getAppeal && !isCarryingObject)
+        if (Input.GetKeyDown(KeyCode.P) && _getAppeal && !isCarryingObject) // Check if the player is near the object and press P
         {
-            transform.position = _player.transform.position + new Vector3(0, 1, 0); 
+            transform.position = _player.transform.position + new Vector3(0, 1, 0); // places the object on top of the player
             transform.SetParent(_player.transform); // Set the Player as the parent
             isCarryingObject = true;
         }

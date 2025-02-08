@@ -6,6 +6,7 @@ public class AppealController : MonoBehaviour
     private bool _getAppeal; // Declare the getAppeal variable
     private static bool isCarryingObject;
 
+
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");

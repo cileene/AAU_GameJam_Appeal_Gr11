@@ -12,20 +12,28 @@ public class ObstacleSpawner : MonoBehaviour
     private void Update()
     {
         _timer -= Time.deltaTime; // Countdown the timer
-        _spawnTime = GameManager.Score switch
-        {
-            0 => 10f,
-            1 => 9f,
-            2 => 8f,
-            3 => 7f,
-            4 => 6f,
-            5 => 5f,
-            6 => 4f,
-            7 => 3f,
-            8 => 2f,
-            9 => 1f,
-            _ => _spawnTime
-        };
+        if (GameManager.Score == 0)
+            _spawnTime = 10f;
+        else if (GameManager.Score == 1)
+            _spawnTime = 9f;
+        else if (GameManager.Score == 2)
+            _spawnTime = 8f;
+        else if (GameManager.Score == 3)
+            _spawnTime = 7f;
+        else if (GameManager.Score == 4)
+            _spawnTime = 6f;
+        else if (GameManager.Score == 5)
+            _spawnTime = 5f;
+        else if (GameManager.Score == 6)
+            _spawnTime = 4f;
+        else if (GameManager.Score == 7)
+            _spawnTime = 3f;
+        else if (GameManager.Score == 8)
+            _spawnTime = 2f;
+        else if (GameManager.Score == 9)
+            _spawnTime = 1f;
+        else
+            _spawnTime = _spawnTime;
 
         if (_timer <= 0f)
         {
